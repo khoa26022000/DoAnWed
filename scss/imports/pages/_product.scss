@@ -1,0 +1,176 @@
+.products{
+    --wImg:520px;
+    .product{
+        display: grid;
+        grid-template-columns: 1fr var(--wImg);
+        &:last-child{
+            grid-template-columns: var(--wImg) 1fr;
+            margin-top: 90px;
+            .product__content{
+                grid-area: 2/3/1/2;
+            }
+            .product__img{
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+        }
+    }
+    @include sm{
+        --wImg:400px
+    }
+    @include xs{
+        .product{
+            grid-template-columns: 1fr;
+            margin-top: 40px;
+            &:last-child{
+                grid-template-columns: 1fr;
+                // padding-top: 0;
+                margin-top: 20px;
+                .product__content{
+                    grid-area: initial;
+                }
+                .product__img{
+                    grid-column: initial;
+                    grid-row: initial;
+                }
+            }
+            &__content{
+                .textbox{
+                    padding: 0;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+
+//////aaaaaaaaaa
+// .product{
+//     width: 100%;
+//     height: 1525px;
+//     &__quality{
+//         padding-top: 90px;
+//         height: 570px;
+//         position: relative;
+//         .textbox{
+//             max-width: max-content;
+//             width:  600px;
+//             position: absolute;
+//             text-align: center;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             &__title{
+//                 display: flex;
+//                 flex-direction: column-reverse;
+//                 row-gap: 15px;
+//                 &::before{
+//                     content: "";
+//                     width: 50px;
+//                     height: 3px;
+//                     opacity: 0.5;
+//                     left: initial;
+//                     right: initial;
+//                     margin: 10px auto;
+//                     background-color: $yellow-cl;
+//                 }
+//             }
+//             &__content{
+//                 width: 500px;
+//             }
+//         }
+//         &-video{
+//             bottom: 20px;
+//             width: 100%;
+//             position: absolute;
+//             @include midflex(flex,space-around,center);
+//             .videoitem{
+//                 text-align: center;
+//                 &__img{
+//                     // width: 200px;
+//                     // height: 200px;
+//                     overflow: hidden;
+//                     // background-color: black;
+//                     position: relative;
+//                     cursor: pointer;
+//                     // &::after{
+//                     //     content: "";
+//                     //     width: 210px;
+//                     //     height: 210px;
+//                     //     border: 2px solid black;
+//                     //     border-radius: 50%;
+//                     //     @include mid();
+//                     //     z-index: 0;
+//                     // }
+//                     .thumail{
+//                             border: 1px solid gray;
+//                             margin: auto;
+//                             width: 200px;
+//                             height: 200px;
+//                             border-radius: 100%;
+//                             padding: 10px;
+//                             // min-width: 100%;
+//                             // min-height: 100%;
+//                             // max-width: 400px;
+//                             // max-height: 400px;
+//                             // @include mid();
+//                     }
+//                     .icon-play{
+//                         @include mid();
+//                         width: 50px;
+//                         height: 50px;
+//                         cursor: pointer;
+//                         z-index: 2;
+//                     }
+//                     // @include br(50%);
+//                 }
+//                 &__title{
+//                     display: flex;
+//                     flex-direction: column-reverse;
+//                     &::after{
+//                         content: "";
+//                         width: 40px;
+//                         height: 3px;
+//                         opacity: 0.5;
+//                         left: initial;
+//                         right: initial;
+//                         margin: 25px auto;
+//                         background-color: $yellow-cl;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// @include sm{
+//     .product{
+//         .item{
+//             &__content{
+//                 &::before{
+//                     display: none;
+//                 }
+//             }
+//         }
+//     }
+// }
+// @include xs{
+//     .product{
+//         height: 100%;
+//         &__quality{
+//             height: 1130px;
+//             padding-top: 30px;
+//             .textbox{
+//                 &__content{
+//                     width: 250px;
+//                 }
+//             }
+//             &-video{
+//                 // padding-top: 10px;
+//                 display: flex;
+//                 flex-direction: column;
+//                 gap: 20px;
+//             }
+//         }
+//     }
+// }

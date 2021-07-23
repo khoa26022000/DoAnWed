@@ -1,0 +1,79 @@
+// css footer
+footer{
+    background-color: black;
+    height: 60px;
+    .container{
+        @include midflex();
+        height: 100%;
+        position: relative;
+        .copy{
+            @include text(12px,pr,$lh-text,white,none);
+        }
+        .logo{
+            @include mid();
+        }
+        .backtotop{
+            @include text(12px,pr,$lh-text,white,uppercase);
+        }
+    }
+
+}
+@include xs{
+    footer{
+        .container{
+            flex-direction:column-reverse;
+            .logo{
+                width: 100px;
+            }
+        }
+    }
+}
+.totop{
+    position: fixed;
+    width: 100px;
+    height: 30px;
+    right: 20px;
+    z-index: 200;
+    bottom: 10px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    &.active{
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+.popup-video{
+    z-index: 1000;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    // opacity: 0;
+    // pointer-events: none;
+    .iframe__wrap{
+        background: #000;
+        border: 5px solid #eee;
+        height: 100%;
+        width: 100%;
+        max-width: 650px;
+        max-height: 400px;
+        @include mid();
+        .close{
+            position: absolute;
+            right: -1%;
+            top: -1%;
+            background:$yellow-cl;
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+            z-index: 1001;
+            cursor: pointer;
+            text-align: center;
+        }
+    }
+}

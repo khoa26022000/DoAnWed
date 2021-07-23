@@ -1,0 +1,397 @@
+// css header
+header{
+    --heightHeader: 80px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    height: var(--heightHeader);
+    width: 100%;
+    @include transition($t);
+    &.bg{
+        background: black;
+        @include transition($t);
+    }
+    .container-fluid{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        color: white;
+        text-transform: uppercase;
+        @include text($fz-text,peb,normal,white,uppercase);
+        letter-spacing: .25rem;
+        @include midflex();
+        .scroll{
+            position: absolute;
+            background: $yellow-cl;
+            height: 3px;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+        }
+        .logo{
+            .hidden{
+                display: none;
+            }
+        }
+        .list{
+            height: 100%;
+            display: flex;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            li{
+                height: 100%;
+                a{
+                    color: white;
+                    padding: 0 35px;
+                    height: 100%;
+                    @include midflex(flex,center,center);
+                    @include transition($t);
+                    // &:hover{
+                    //     color: $yellow-cl;
+                    //     @include transition($t);
+                    //    }
+                    &.active{
+                        color: $yellow-cl;
+                        @include transition($t);
+                    }   
+                }
+            }
+        }
+        .lang{
+            padding-right: 10px;
+            @include midflex(flex,center,center);
+            position: relative;
+            &__current{
+                @include midflex(flex,center,center);
+                gap: 10px;
+                span{
+                    cursor: pointer;
+                }
+            }
+            &__option{
+                display: none;
+                position: absolute;
+                top: 25px;
+                text-align: right;
+                width: 20px;
+                margin-right: 15px;
+                a{
+                    color: white;
+                }
+            }
+            &.click{
+                .lang__option{
+                    display: block;
+                }
+            }
+        }
+        .right{
+            display: inline-flex;
+        }
+        .nav{
+            display: none;
+        }
+        // .click{
+        //     display: block;
+        //     opacity: 1;
+        //     pointer-events: auto;
+        // }
+        .humberger{
+            cursor: pointer;
+            display: none;
+            width: 40px;
+            height: 22px;
+            position: relative;
+            z-index: 300;
+            span{
+                width: 100%;
+                height: 2px;
+                display: block;
+                background: $yellow-cl;
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                @include transition($t);
+            }
+            &::before,&::after{
+                content: '';
+                width: 100%;
+                height: 2px;
+                display: block;
+                background: $yellow-cl;
+                @include transform(rotate(0deg) translate(0px));
+                @include transition($t);
+            }
+            &::after{
+                position: absolute;
+                bottom: 0;
+            }
+            &:hover{
+                &.click{
+                    &::before{
+                        @include transform(rotate(-45deg) translate(-8px, 6px) );
+                        @include transition($t);
+                    }
+                    span{
+                        opacity: 0;
+                        @include transition($t);
+                    }
+                    &::after{
+                        @include transform(rotate(45deg) translate(-8px,-6px) );
+                        @include transition($t);
+                    }
+                }
+            }
+        }
+    }
+}
+.create{
+    position: fixed;
+    background: white;
+    width: 800px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-300%,-50%);
+    z-index: 1000;
+    .close{
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .form{
+        position: relative;
+        height: 100%;
+        .textbox{
+            position: absolute;
+            --pdText:0px;
+            padding-top: 10px;
+            margin: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            &__title{
+                &::before{
+                    display: none;
+                }
+            }
+        }
+        &__bottom{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            .btn{
+                bottom: 20px;
+                cursor: pointer;
+                pointer-events: none;
+                z-index: 1000;
+            }
+        }
+        &__body{
+            @include mid();
+            .field{
+                display: flex;
+                padding-bottom: 10px;
+                &__input{
+                    position: relative;
+                    width: 400px;
+                    height: 40px;
+                    padding: 10px 0;
+                    border-radius: 3px;
+                    outline: 0;
+                    border: 1px solid gray;
+                    padding-left: 5px;
+                    input{
+                        position: absolute;
+                    }
+                    &-ac{
+                        position: absolute;
+                        opacity: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .btn{
+                        border: 0px;
+                        position: absolute;
+                        background: gray;
+                        pointer-events: none;
+                        top: 0;
+                        right: 0;
+                        padding: 10px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+    // max-width: $container-max-width;
+    // mix-blend-mode: difference;
+// .menu{
+//     display: flex;
+//     width: 100%;
+//     height: 100%;
+//     color: white;
+//     text-transform: uppercase;
+//     font-family: pb;
+//     @include midflex();
+//     &__list{
+//         height: 100%;
+//         ul{
+//             display: flex;
+//             position: absolute;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             height: 100%;
+//             li{
+//                 a{
+//                     @include text($fz-text,pb,20px,white,uppercase);
+//                     padding: 0 35px;
+//                     height: 100%;
+//                     @include midflex(flex,center,center);
+//                     @include transition($t);
+//                     &:hover{
+//                         color: $yellow-cl;
+//                         @include transition($t);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     &__lang{
+//         @include midflex(flex,center,center);
+//         position: relative;
+//         .option{
+//             display: none;
+//             position: absolute;
+//             top: 25px;
+//             text-align: right;
+//             width: 25px;
+//             a{
+//                 color: white;
+//             }
+//         }
+//         &:hover{
+//             .option{
+//                 display: block;
+//             }
+//         }
+//     }
+// }
+// .en{
+//     padding: 0 10px;
+//     span{
+//         @include text($fz-text,pb,20px,white,uppercase);
+//     }
+// }
+@include sm{
+    header{
+        .container-fluid{
+            .logo{
+                img{
+                    width: 150px;
+                }
+            }
+            .list{
+                display: none;
+            }
+            .humberger{
+                display: block;
+            }
+            .nav{
+                display: none;
+                // opacity: 0;
+                width: 100vw;
+                height: 100vh;
+                background: black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                @include transform(initial);
+                z-index: 200;
+                // pointer-events: none;
+                @include transition(opacity $t);
+                &.click{
+                    display: block;
+                    pointer-events: auto;
+                }
+                ul{
+                    flex-direction: column;
+                    @include mid();
+                    li{
+                        text-align: center;
+                        margin: 20px auto;
+                        a{
+                            padding: 20px;
+                            color: white;
+                            // @include text($fz-text,peb,20px,white,uppercase);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include md {
+    header {
+        .container-fluid{
+            .list{
+                left: 55%;
+            }
+        }
+    }
+}
+
+@include xs{
+    header{
+        --heightHeader: 60px;
+        opacity: 1;
+        .container-fluid{
+            .humberger{
+                display: block;
+                // &:hover{
+                //     .nav{
+                //         display: block;
+                //     }
+                // }
+            }
+            .nav{
+                display: none;
+                // opacity: 0;
+                width: 100vw;
+                height: 100vh;
+                background: black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                @include transform(initial);
+                z-index: 200;
+                // pointer-events: none;
+                @include transition(opacity $t);
+                &.click{
+                    display: block;
+                    pointer-events: auto;
+                }
+                ul{
+                    flex-direction: column;
+                    @include mid();
+                    li{
+                        text-align: center;
+                        margin: 20px auto;
+                        a{
+                            padding: 20px;
+                            color: white;
+                            // @include text($fz-text,peb,20px,white,uppercase);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

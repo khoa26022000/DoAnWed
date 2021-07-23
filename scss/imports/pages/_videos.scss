@@ -1,0 +1,58 @@
+.videos{
+    .video{
+        &__item{
+            padding-top: 30px;
+            padding-bottom: 90px;
+            width: 100%;
+            @include midflex(flex,space-around,center);
+            .videoitem{
+                text-align: center;
+                &__img{
+                    overflow: hidden;
+                    position: relative;
+                    cursor: pointer;
+                    .thumail{
+                            border: 1px solid gray;
+                            margin: auto;
+                            width: 200px;
+                            height: 200px;
+                            border-radius: 100%;
+                            padding: 10px;
+                    }
+                    .icon-play{
+                        @include mid();
+                        width: 50px;
+                        height: 50px;
+                        cursor: pointer;
+                        z-index: 2;
+                    }
+                }
+                &__title{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    &::after{
+                        content: "";
+                        width: 40px;
+                        height: 3px;
+                        opacity: 0.5;
+                        left: initial;
+                        right: initial;
+                        margin: 25px auto;
+                        background-color: $yellow-cl;
+                    }
+                }
+            }
+        }
+    }
+    @include xs{
+        .video{
+            &__item{
+                display: flex;
+                flex-direction: column;
+                .videoitem{
+                    padding-top: 15px;
+                }
+            }
+    }
+}
+}

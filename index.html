@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Wooder</title>
+    <link rel="icon" href="img/favicon.ico">
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <!-- meta facebook -->
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trang chủ" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="Woonder"></a>
+                <h1 class="hidden">Wooder</h1>
+                <!-- display: none; -->
+            </div>
+            <ul class="list">
+                <!-- <li><a href="#slider">Slider</a></li> -->
+                <li><a href="#products">Product</a></li>
+                <li><a href="#videos">Video</a></li>
+                <li><a href="#abouts">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#news">News</a></li>
+            </ul>
+            <div class="right">
+                <div class="lang">
+                    <div class="lang__current">
+                        <span>EN</span>
+                        <i><img src="img/en.png"></i>
+                    </div>
+                    <div class="lang__option">
+                        <a href="#">VN</a>
+                        <a href="#">JP</a>
+                        <a href="#">AU</a>
+                    </div>
+                </div>
+                <div class="humberger">
+                    <span></span>
+                </div>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <div class="scroll">
+
+            </div>
+        </div>
+    </header>
+    <div class="create">
+        <div class="close">x</div>
+        <form class="form">
+            <div class="textbox">
+                <h2 class="textbox__title --texcenter">Create an Account</h2>
+            </div>
+            <div class="form__body">
+                <div class="field">
+                    <div class="field__input-wrapper">
+                        <input placeholder="Name" autocapitalize="off" spellcheck="false" class="field__input" size="30"
+                            type="text" value="" name="customer[name]" id="field-name" required />
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field__input-wrapper">
+                        <input placeholder="Email" autocapitalize="off" spellcheck="false" class="field__input"
+                            size="30" type="text" value="" name="customer[email]" id="field-email" />
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field__input-wrapper">
+                        <input type="password" placeholder="Enter Password (At Least 8 Characters)" class="field__input"
+                            name="customer[password]" id="field-password" pattern=".{8,}" required />
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field__input-wrapper">
+                        <input type="password" id="confirm-password" value="" class="field__input"
+                            placeholder="Verify Password" pattern=".{8,}" required="">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field__input">
+                        <span class="textfile"></span>
+                        <input type="file" id="confirm-input" value="" class="field__input-ac" placeholder="Input"
+                            pattern=".{8,}" required="">
+                        <div class="btn">file</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__bottom">
+                <button class="btn form-btn" type="submit">Create an Account</button>
+            </div>
+        </form>
+    </div>
+    <nav>
+        <div class="navLeft">
+            <div class="navLeft__item --item1"><span>Đăng ký</span> </div>
+            <div class="navLeft__item --item2"><span>Đăng nhập</span></div>
+            <div class="navLeft__item --item3 accordion">
+                <div class="accordion__title"><span>Liên hệ</span></div>
+                <div class="accordion__text">
+                    <p>Số điện thoại: 0365478116 Địa chỉ: avc Đường aa</p>
+                </div>
+            </div>
+            <div class="navLeft__item --item4 accordion">
+                <div class="accordion__title"><span>Thông tin</span></div>
+                <div class="accordion__text">aaaaaaaaas</div>
+            </div>
+        </div>
+    </nav>
+    <div class="overlay"></div>
+    <main class="mainwrapper">
+        <section class="slider t">
+            <div class="slider-wrap">
+                <div class="slider__item">
+                    <img src="img/slide1.jpg" alt="" class="slider__item-img">
+                    <div class="slider__item-text">
+                        <h2 class="title" style="--delay:0.6s">Wooder</h2>
+                        <a href="#" class="btn btnmain" style="--delay:0.8s">
+                            <span>Learn more</span>
+                            <img src="img/arrow-right.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="slider__item">
+                    <img src="img/slide2.jpg" alt="" class="slider__item-img">
+                    <div class="slider__item-text">
+                        <h2 class="title" style="--delay:0.6s">Wooder</h2>
+                        <a href="#" class="btn btnmain" style="--delay:0.8s">
+                            <span>Learn more</span>
+                            <img src="img/arrow-right.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="slider__item">
+                    <img src="img/slide3.jpg" alt="" class="slider__item-img">
+                    <div class="slider__item-text">
+                        <h2 class="title" style="--delay:0.6s">Wooder</h2>
+                        <a href="#" class="btn btnmain" style="--delay:0.8s">
+                            <span>Learn more</span>
+                            <img src="img/arrow-right.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__bottom">
+                <div class="container-fluid">
+                    <div class="slider__bottom-paging">
+                        <span class="number">01</span>
+                        <div class="dotbottom">
+                            <ol></ol>
+                        </div>
+                        <!-- <ol>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol> -->
+                    </div>
+                    <div class="slider__bottom-mouse">
+                        <img src="img/mouse61.png" alt="">
+                        <img src="img/arrow-down.png" alt="">
+
+                    </div>
+                    <div class="slider__bottom-control">
+                        <div class="btn pre"><img src="img/arrow-left.png" alt=""></div>
+                        <div class="btn next"><img src="img/arrow-right.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="products t pd">
+            <div class="container">
+                <div class="product">
+                    <div class="product__content">
+                        <div class="textbox">
+                            <h2 class="textbox__title">FURNITURE</h2>
+                            <p class="textbox__content">Wooder utilizes materials otherwise left behinh, rendered
+                                useless in their origi-nal intent. By creating new pieces made</p>
+                            <a class="textbox__link" href="#">LEARN MORE <img src="img/arrow-right.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="product__img">
+                        <img src="img/img2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__content">
+                        <div class="textbox --textright">
+                            <h2 class="textbox__title">DECO</h2>
+                            <p class="textbox__content">Wooder utilizes materials otherwise left behinh, rendered
+                                useless in their origi-nal intent. By creating new pieces made</p>
+                            <a class="textbox__link" href="#">LEARN MORE <img src="img/arrow-right.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="product__img">
+                        <img src="img/img1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="videos t pd">
+            <div class="container">
+                <div class="video">
+                    <div class="video__content">
+                        <div class="textbox --texcenter">
+                            <h2 class="textbox__title">WOODER - IS QUALITY</h2>
+                            <p class="textbox__content">We create unique design objects made of rare wood, specially
+                                under the order. Look at the short video about our work.</p>
+                        </div>
+                    </div>
+                    <div class="video__item">
+                        <div class="videoitem">
+                            <div class="videoitem__img">
+                                <img class="thumail" src="img/img-video1.jpg" alt="">
+                                <div data-video-id="Ws-QlpSltr8" class="icon-play">
+                                    <img src="img/play.png" alt="">
+                                </div>
+                            </div>
+                            <div class="videoitem__title">
+                                <p>Innovative Desgign</p>
+                            </div>
+                        </div>
+                        <div class="videoitem">
+                            <div class="videoitem__img">
+                                <img class="thumail" src="img/img-video2.jpg" alt="">
+                                <div data-video-id="PNhYz6RmIr4" class="icon-play">
+                                    <img src="img/play.png" alt="">
+                                </div>
+                            </div>
+                            <div class="videoitem__title">
+                                <p>Innovative Desgign</p>
+                            </div>
+                        </div>
+                        <div class="videoitem">
+                            <div class="videoitem__img">
+                                <img class="thumail" src="/img/img-video3.jpg" alt="">
+                                <div data-video-id="2Vv-BfVoq4g" class="icon-play">
+                                    <img src="/img/play.png" alt="">
+                                </div>
+                            </div>
+                            <div class="videoitem__title">
+                                <p>Innovative Desgign</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="info">
+            <div class="container">
+                <div class="info__textbox textbox">
+                    <h2 class="textbox__title --yellow">WE DO THE DESIGN <br>OF ANY COMPLEXITY</h2>
+                    <!-- <h2 class="textbox__title --yellow"> OF ANY COMPLEXITY</h2> -->
+                    <p class="textbox__content">This is a team of professinals that make the furniture and wood decor
+                        high standard. Creatting moodern designs. Adhering to the global quality standards. And we are
+                        doing work with love.</p>
+                    <a class="btn" href="#">
+                        <img src="img/player6.png">
+                        <span>watch VIDEO</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="abouts t pd">
+            <div class="container">
+                <div class="about">
+                    <div class="about__img">
+                        <img src="img/img-about.jpg" alt="">
+                    </div>
+                    <div class="about__content">
+                        <div class="textbox">
+                            <h2 class="textbox__title">ABOUT US</h2>
+                            <p class="textbox__content">Wooder utilizes materials otherwise left behinh, rendered
+                                useless in their origi-nal intent. By creating new pieces made</p>
+                            <a class="textbox__link" href="#">LEARN MORE <i><img src="img/arrow-right.png"
+                                        alt=""></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery t pd">
+            <div class="container">
+                <div class="gallery__title">
+                    <div class="textbox">
+                        <h2 class="textbox__title">GALLERY</h2>
+                        <div class="textbox__content">
+                            <p>We are a team of professionals in the wood processing and the creation of wooden
+                                furniture of the highest class</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery__list" itemscope data-pswp-uid="1">
+                    <figure class="item image img1">
+                        <a href="img/img3.jpg" data-size="343x384">
+                            <img src="img/img3.jpg" alt="">
+                        </a>
+                    </figure>
+                    <figure class="item image img2">
+                        <a href="img/img5.jpg" data-size="368x387">
+                            <img src="img/img5.jpg" alt="">
+                        </a>
+                    </figure>
+                    <figure class="item image img3">
+                        <a href="img/img4.jpg" data-size="1128x470">
+                            <img src="img/img4.jpg" alt="">
+                        </a>
+                    </figure>
+                    <figure class="item image img4">
+                        <a href="img/img6.jpg" data-size="400x214">
+                            <img src="img/img6.jpg" alt="">
+                        </a>
+                    </figure>
+                    <figure class="item image img5">
+                        <a href="img/img7.jpg" data-size="826x466">
+                            <img src="img/img7.jpg" alt="">
+                        </a>
+                    </figure>
+                    <!-- <div class="gallery__item --img"><img src="img/img3.jpg" alt=""></div>
+                    <div class="gallery__item --img"><img src="img/img5.jpg" alt=""></div>
+                    <div class="gallery__item --img"><img src="img/img4.jpg" alt=""></div>
+                    <div class="gallery__item --img"><img src="img/img6.jpg" alt=""></div>
+                    <div class="gallery__item --img"><img src="img/img7.jpg" alt=""></div> -->
+                </div>
+            </div>
+        </section>
+        <section class="news t pd">
+            <div class="container">
+                <div class="news__title">
+                    <div class="textbox">
+                        <h2 class="textbox__title">NEWS</h2>
+                        <div class="textbox__content">
+                            <p>We are a team of professionals in the wood processing and the creation of wooden
+                                furniture of the highest class</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="news__tags">
+                    <div class="news__tags-text">
+                        <div class="tag active">Sport
+                        </div>
+                        <div class="tag">Enter</div>
+                    </div>
+                    <div class="news__item active">
+                        <div class="item">
+                            <div class="item__img">
+                                <img src="img/img8.jpg" alt="">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__info-title"><a href="">WHERE DOES IT COME FROM?</a></h3>
+                                <p class="item__info-content">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur...</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img">
+                                <img src="img/img9.jpg" alt="">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__info-title"><a href="">WHERE DOES IT COME FROM?</a></h3>
+                                <p class="item__info-content">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur...</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img">
+                                <img src="img/img8.jpg" alt="">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__info-title"><a href="">WHERE DOES IT COME FROM?</a></h3>
+                                <p class="item__info-content">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news__item">
+                        <div class="item">
+                            <div class="item__img">
+                                <img src="img/img10.jpg" alt="">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__info-title"><a href="">WHERE DOES IT COME FROM?</a></h3>
+                                <p class="item__info-content">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur...</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img">
+                                <img src="img/img6.jpg" alt="">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__info-title"><a href="">WHERE DOES IT COME FROM?</a></h3>
+                                <p class="item__info-content">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur...</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__img">
+                                <img src="img/img6.jpg" alt="">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__info-title"><a href="">WHERE DOES IT COME FROM?</a></h3>
+                                <p class="item__info-content">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="newsslider t">
+            <div class="item"><img src="img/img5.jpg" alt=""></div>
+            <div class="item"><img src="img/img4.jpg" alt=""></div>
+            <div class="item"><img src="img/img6.jpg" alt=""></div>
+            <div class="item"><img src="img/img9.jpg" alt=""></div>
+        </section>
+    </main>
+    <div class="totop">
+        Back to top
+    </div>
+    <footer>
+        <div class="container">
+            <div class="copy">@ 2016 WOONDER, Demo by CFD</div>
+            <div class="logo"><a href="#"><img src="/img/logo.png"></a></div>
+            <div class="backtotop">BACK TO TOP</div>
+        </div>
+    </footer>
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-video">
+        <div class="iframe__wrap">
+            <div class="close">x</div>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/2Vv-BfVoq4g"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; clipboard-write;autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <!-- PNhYz6RmIr4 -->
+        <!-- Ws-QlpSltr8 -->
+    </div>
+    <script type="text/javascript" src="dest/jsmain.min.js"></script>
+    <script type="text/javascript" src="dest/main.js"></script>
+</body>
+
+</html>

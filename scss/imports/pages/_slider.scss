@@ -1,0 +1,226 @@
+.slider{
+    --fztitle:8.3rem;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    &-wrap{
+        height: 100%;
+    }
+    &__item{
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        pointer-events: auto;
+        // @include transition($t);
+        // &.active{
+        //     opacity: 1;
+        //     pointer-events: auto;
+        //     @include transition($t);
+        // }
+        &-img{
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            @include mid;
+            // background-size: cover;
+            // background-position: top center;
+            z-index: 0;
+        }
+        &-text{
+            @include mid;
+            .title{
+                // margin: 80px auto;
+                padding-bottom: 40px;
+                text-transform: uppercase;
+                letter-spacing: 15px;
+                color: $yellow-cl;
+                font-size: var(--fztitle);
+                font-family: peb;
+                opacity: 0;
+                visibility: hidden;
+                transition:  0.6s;
+                transition-delay: calc(var(--delay));
+                transform: translateX(50px);
+            }
+            .btnmain{
+                opacity: 0;
+                visibility: hidden;
+                transition:  0.6s;
+                transition-delay: calc(var(--delay));
+                transform: translateX(-50px);
+            }
+        }
+    }
+    .is-selected{
+        .btnmain,.title{
+            opacity: 1;
+            visibility: visible;
+            transition: 0.6s;
+            transition-delay: calc(var(--delay));
+            transform: translateX(0px);
+        }
+    }
+    &__bottom{
+        width: 100%;
+        position: absolute;
+        bottom: 25px;
+        .container-fluid{
+            @include midflex(flex,space-between,flex-end);
+        }
+        &-paging{
+            // width: 190px;
+            @include midflex(flex,center,center);
+            .number{
+                @include text(4.3rem,peb,$lh-text,$text-black-cl,uppercase);
+                letter-spacing: 1px;
+                color: $yellow-cl;
+                display: flex;
+                align-items: center;
+                &:before{
+                    content: "";
+                    width: 40px;
+                    height: 2px;
+                    margin-right: 10px;
+                    background-color: $yellow-cl;
+                    display: inline-block;
+                }
+            }
+            .dotbottom{
+                width: 100%;
+                display: flex;
+                @include midflex();
+                ol{
+
+                    li{
+                        margin-left: 15px;
+                        width: 8px;
+                        height: 8px;
+                        background-color: white;
+                        opacity: 0.5;
+                        @include br(50%);
+                        flex-shrink: 0;
+                        cursor: pointer;
+                        @include transition($t);
+                        &:hover,
+                        &.active{
+                            opacity: 1;
+                            background-color: $yellow-cl;
+                            @include transition($t);
+                        }
+                    }
+                }
+            }
+        }
+        &-mouse{
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            left: 55%;
+           img {
+               &:first-child {
+                margin-bottom: 20px;
+            }
+            &:last-child {
+                position: relative;
+                @include animation(
+                    arrowFadeDown 2s 1s infinite alternate-reverse ease-in
+                );
+            }
+           }
+           
+        }
+        &-control{
+            @include midflex(flex,space-between,flex-end);
+            .btn{
+                padding: 10px 20px;
+            }
+        }
+    }
+            
+    }
+@include sm{
+    .slider{
+        height: 600px;
+    }
+}
+@include xs{
+    .slider{
+        --fztitle:6rem;
+        height: 480px;
+        &__item{
+            &-text{
+                .title{
+                    margin: 40px auto;
+                    letter-spacing: 10px;
+                    // font-size: 60px;
+                }
+                .btn{
+                    padding: 5px 15px;
+                    span{
+                        font-size: 10px;
+                        letter-spacing: 2px;
+                    }
+                    img{
+                        display: none;
+                    }
+                }
+            }
+        }
+        &__bottom{
+            &-paging{
+                .number{
+                    @include text(30px,pb,$lh-text,$yellow-cl,uppercase);
+                    &::before{
+                        display: none;
+                    }
+                }
+                ul{
+                    @include midflex();
+                        li{
+                            margin-left: 7px;
+                            width: 7px;
+                            height: 7px;
+                        }
+                    }
+            }
+            &-mouse{
+                @include mid();
+                top:-30px;
+            }
+            &-control{
+                .btn{
+                    padding: 3px 5px;
+                    img{
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+}
+}
+@include xxs{
+    .slider{
+        --fztitle:5rem;
+        height: 480px;
+        &__item{
+            &-text{
+                @include mid;
+                .title{
+                    margin: 20px auto;
+                    padding-bottom: 0;
+                    letter-spacing: 8px;
+                }
+                .btn{
+                    padding: 4px 8px;
+                    img{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

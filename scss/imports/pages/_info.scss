@@ -1,0 +1,42 @@
+.info{
+    width: 100%;
+    height: 650px;
+    background: url(../img/background.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+    .textbox{
+        --pdText:0;
+        padding-top: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 500px;
+        &__title{
+            &::before{
+                display: none;
+            }
+        }
+        &__content{
+            margin-top: 20px;
+            padding-bottom: 30px;
+            color: white;
+        }
+        .btn{
+            margin: initial;
+        }
+    }
+    @include xs{
+        .textbox{
+            .btn{
+                padding: 5px 15px;
+                span{
+                    font-size: 10px;
+                    letter-spacing: 2px;
+                }
+                img{
+                    display: none;
+                }
+            }
+        }
+    }
+}

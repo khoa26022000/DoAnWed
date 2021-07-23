@@ -1,0 +1,23 @@
+// css button, title, icon, elements...
+img {
+    max-width: 100%;
+    object-fit: cover;
+    // display: block;
+}
+a{
+    text-decoration: none;
+}
+p{
+    @include overtext(3);
+}
+
+@keyframes arrowFadeDown {
+    to {
+        opacity: 1;
+        top: 0;
+    }
+    from {
+        opacity: 0;
+        top: 2rem;
+    }
+}

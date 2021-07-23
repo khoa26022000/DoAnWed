@@ -1,0 +1,198 @@
+// css components
+
+.textbox{
+    --pdText:100px;
+    --wBefore: 80px;
+    --pdRight:20px;
+    padding-left: var(--pdText);
+    padding-right: var(--pdRight);
+    padding-top: 80px;
+    &__title{
+        @include text(4rem,pb,$lh-text,$text-black-cl,none);
+        position: relative;
+        // @include midflex(flex,none,center);
+        display: inline-flex;
+        align-items: center;
+        &::before{
+            content: '';
+            width: var(--wBefore);
+            height: 2px;
+            background: $text-cl;
+            display: inline-block;
+            position: relative;
+            margin-left: -80px;
+            left: -20px;
+        }
+        // letter-spacing: .7rem;
+        // @include overtext(3);
+    }
+    &__content{
+        padding: 10px 0 24px 0;
+        color: $text-cl;
+    }
+    &__link{
+        padding-top: 15px;
+        display: inline-flex;
+        position: relative;
+        cursor: pointer;
+        @include text($fz-text,pb,normal,black,uppercase);
+        @include overtext(3);
+        letter-spacing:2px;
+        img{
+            margin-left: 10px;
+            mix-blend-mode: difference;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 2px;
+            background: $yellow-cl;
+            display: block;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &.--textright{
+        text-align: right;
+        padding-left: 0;
+        padding-right: var(--pdText);
+        padding-left: var(--pdRight);
+        .textbox__title{
+            flex-direction: row-reverse;
+            &::before{
+                margin-left: initial;
+                left: initial;
+                margin-right: -80px;
+                right: -20px;
+            }
+        }
+    }
+    &.--texcenter{
+        max-width: 480px;
+        margin: auto;
+        padding-left:0;
+        padding-right: 0;
+        padding-top: 0;
+        text-align: center;
+        .textbox__title{
+            // display: block;
+            flex-direction: column-reverse;
+            &::before{
+                width: 40px;
+                margin: 15px auto;
+                margin-left: auto;
+                left: initial;
+                right: initial;
+                margin-right: auto;
+                background: $yellow-cl;
+            }
+        }
+    }
+    @include sm{
+            --pdText:0px;
+            --wBefore: 80px;
+            --pdRight:20px;
+            // padding-left: var(--pdText);
+            // padding-right: var(--pdRight);
+            padding-top: 10px;
+            &__title{
+                &::before{
+                    display: none;
+                }
+            }
+    }
+}
+.btn{
+    padding: 15px 35px;
+    border: 1px solid white;
+    text-transform: uppercase;
+    position: relative;
+    font-family: peb;
+    letter-spacing: 5px;
+    // @include midflex();
+    display: block;
+    width: max-content;
+    transition: transform $t;
+    margin: auto;
+    span{
+        color: white;
+        mix-blend-mode: difference;
+        position: relative;
+        z-index: 10;
+    }
+    img{
+        // margin-left: 10px;
+        position: relative;
+        width: auto;
+        height: auto;
+        z-index: 10;
+    }
+    &:after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: $yellow-cl;
+        top: 0;
+        left: 0;
+        display: block;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform $t;
+    }
+    &:hover::after{
+        transform: scaleX(1);
+        transform-origin: left;
+        transition:  transform $t;
+    }
+}
+.--yellow{
+    color: $yellow-cl;
+}
+.--reverse{
+    // flex-direction:row-reverse;
+    direction: rtl;
+}
+.--reversecol{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.--left{
+    text-align: right;
+}
+
+// @include sm{
+//         .item{
+//             &__content{
+//                 &::before{
+//                     display: none;
+//                 }
+//             }
+//         }
+// }
+// @include xs{
+//     .item{
+//         --w:330px;
+//         --h:180px;
+//         padding-top: 30px;
+//         display: flex;
+//         flex-direction: column;
+//         &__content{
+//             padding-top: 20px;
+//         }
+//     }
+//     .textbox{
+//         &__title{
+//             @include text(30px,peb,$lh-text,$text-black-cl,uppercase);
+//             letter-spacing: 3px;
+//         }
+//         &__content{
+//             width: 250px;
+//         }
+//         &__link{
+//             padding-top: 10px;
+//             padding-bottom: 15px;
+//         }
+//     }
+// }

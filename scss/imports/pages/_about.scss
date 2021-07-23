@@ -1,0 +1,20 @@
+.abouts{
+    .about{
+        display: grid;
+        grid-template-columns: 520px 1fr;
+        &__content{
+            .textbox{
+                &__title{
+                    &::before{
+                        left: -50px;
+                    }
+                }
+            }
+        }
+    }
+    @include xs{
+        .about{
+            grid-template-columns: 1fr;
+        }
+    }
+}

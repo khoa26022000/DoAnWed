@@ -1,0 +1,76 @@
+// css navigator (Menu)
+nav{
+    transition: $t;
+    --header:80px;
+        position: fixed;
+        width: 320px;
+        height: 100vh;
+        background: white;
+        top:var(--header);
+        left: 0;
+        bottom: 0;
+        transform: translate(-100%,0);
+        z-index: 100;
+        .navLeft{
+            &__item{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 15px 0;
+                border: 1px solid $yellow-cl;
+                cursor: pointer;
+                span{
+                    position: relative;
+                    // top: 40%;
+                    left: 10px;
+                    @include text($fz-text,peb,normal,black,none);
+                }
+                .accordion{
+                    width: 100%;
+                    height: 100%;
+                    &__title{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &__text{
+                        padding: 0 18px;
+                        display: none;
+                        background-color: white;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+}
+.overlay{
+    transition: $t;
+    position: fixed;
+    top: var(--header);
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    opacity: 0;
+    z-index: -100;
+}
+.active{
+    display: block;
+}
+.menu-nav{
+    .overlay{
+        opacity: 0.85;
+        z-index: 99;
+        transition: $t;
+    }
+    nav{
+        transform: translate(0,0);
+        transition: $t;
+    }
+    section{
+        transform: translate(10%,0);
+        transition: $t;
+    }
+}
+.t{
+    transition: $t;
+}
